@@ -1,0 +1,12 @@
+{{ $lang := site.Language.Lang }}
+{{ $data := site.Data }}
+{{ $sortmenu := index $data $lang "sortdocsmenu" }}
+{{ $sortData := slice }}
+{{ range $index, $value := $sortmenu }}
+  {{ $page := dict }}
+  {{ $page = merge $page (dict "title" (lower .)) }}
+  {{ $page = merge $page (dict "index" $index) }}
+  {{ $sortData = append $page $sortData }}
+{{ end }}
+
+{{ return $sortData }}
