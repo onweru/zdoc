@@ -67,7 +67,7 @@ $light-nav-icon-color: {{ .Site.Data.color.light_nav_icon_color }};
 
 // custom
 #docs__menu {
-  &, ul {
+  ul {
     display: flex;
     flex-flow: column;
   }
